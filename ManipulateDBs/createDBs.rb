@@ -5,13 +5,13 @@ class CreateDBs
                 @dataLoc = dataLoc;
                 @dbLoc = dbLoc;
 
-                @inputFile_IS = nil;
-                @inputFile_genome = nil;
-                @inputFile_geneSeqs = nil;
+                @inputFile_IS = nil
+                @inputFile_genome = nil
+                @inputFile_geneSeqs = nil
 
-                @dbName_IS = nil;
-                @dbName_geneSeqs = nil;
-                @dbName_reference = nil;
+                @dbName_IS = nil
+                @dbName_geneSeqs = nil
+                @dbName_reference = nil
         end
 
         attr_reader :inputFile_genome
@@ -24,7 +24,7 @@ class CreateDBs
 
 
         def createDB_IS()
-                checkInputs(@inputFile_IS, @dbName_IS);
+                checkInputs(@inputFile_IS, @dbName_IS)
         end
 
 

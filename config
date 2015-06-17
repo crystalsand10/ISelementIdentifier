@@ -1,0 +1,9 @@
+# File to store variables used in the program.  
+# Format: Identifier_name: Identifier value 
+# All spaces are ignored
+# 
+DataFolder: Data
+DatabaseFolder: Database # yolo
+BlastResultsFolder: BlastResults
+FinalResultsFolder: ProcessedResults
+
