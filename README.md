@@ -11,7 +11,7 @@ usage:
 #### Required arguments 
 |Argument| Argument-value| Explanation|
 | ---|---|---|
-|-data| <datafile>|  location and name of sequence reads file (in fasta format)|
+|-data| loc/datafile.fq |  location and name of sequence reads file (in fasta format)|
 
 #### Optional arguments 
 |Argument| Argument-value| Explanation|
