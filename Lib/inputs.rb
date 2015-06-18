@@ -6,13 +6,13 @@ class Inputs
 
 	# global variables 
 	@@progName_makeBlastDB = 'makeblastdb' # name of the program to create blast db. 
-	
+	@@dbName_ISseqs = 'IS_seqs'
 	#getters 
 	
 	attr_reader :dataFile # loc. and name of dataFile
 	attr_reader :blastProg # location of the blast programs 
 	attr_reader :blastDBLoc # location where the blast databases will be created 
-
+	attr_reader :dbName_ISseqs # IS seqs database file 
 
 	# initalise with ARGV 
 	def initialize(argv)
@@ -67,6 +67,8 @@ class Inputs
 		elsif not defined?(@blastDBLoc)
 			@blastDBLoc = '../BlastDatabases/'
 			checkBlastDBLoc()
+		elsif not defined?(@dbName_ISseqs)
+			checkdbNameISseqs() 
 		end 
 
 	end 
@@ -100,6 +102,11 @@ class Inputs
 		if not File.directory?(@blastDBLoc) 
 			Dir.mkdir(@blastDBLoc) 
 		end 
+	end 
+
+	def checkdbNameISseqs() 
+		checkBlastDBLoc()
+		@dbName_ISseqs = @blastDBLoc + @@dbName_ISseqs
 	end 
 
 

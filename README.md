@@ -45,6 +45,8 @@ Note: this pipeline has only been tested on Mac OS X 10.10.3 and x86_64 GNU/Linu
 ## TODO's
 
 + inputs/printHelp()
-+ optional argument, name of the blastDatabase
++ Can extend optional arguments: 
+..* name of isSeqs database 
+
 
 

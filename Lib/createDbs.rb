@@ -7,8 +7,8 @@ class CreateDbs
 	end
 
 
-	def createBlastDB(makeBlastDb, inputFile, blastDBFolder)
-		exec(makeBlastDb + ' -in ' + inputFile + ' -out ' +  blastDBFolder + inputFile + ' -dbtype ' + nucl)
+	def createBlastDB(makeBlastDb, inputFile, blastOutputFile)
+		exec(makeBlastDb + ' -in ' + inputFile + ' -out ' +  blastOutputFile + ' -dbtype ' + 'nucl')
 	end  
 
 end 
