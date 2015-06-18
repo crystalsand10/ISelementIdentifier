@@ -1,16 +1,17 @@
 #!/usr/bin/ruby 
 
-$VERBOSE = true
+$VERBOSE = true ## to print out warnings 
 
-require('../Lib/inputs') 
+require('../Lib/inputs') ## handling command line arguments 
+require('../Lib/createDBs') ## for creating blast databases required
+
+
 
 inputs = Inputs.new(ARGV)
 
-if (inputs.help == true)  
-	puts "hahaha"
-else 
-	puts "tra la la "
-end 
+createDBs = CreateDBs.new() 
+
+createDBs.createBlastDB(inputs.dataFile, )
 
 puts inputs.dataFile 
 
