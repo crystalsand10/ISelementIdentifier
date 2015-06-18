@@ -9,11 +9,11 @@ require('../Lib/createDBs') ## for creating blast databases required
 
 inputs = Inputs.new(ARGV)
 
-createDBs = CreateDBs.new() 
 
-createDBs.createBlastDB(inputs.dataFile, )
+createDBs = CreateDbs.new()
+createDBs.createBlastDB(inputs.blastProg, inputs.dataFile, inputs.blastDBLoc)
 
-puts inputs.dataFile 
+
 
 
 

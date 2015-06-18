@@ -44,8 +44,7 @@ Note: this pipeline has only been tested on Mac OS X 10.10.3 and x86_64 GNU/Linu
 
 ## TODO's
 
-+ Print help and exit 
-..+ check if input files exist
++ inputs/printHelp()
 + optional argument, name of the blastDatabase
 
 
