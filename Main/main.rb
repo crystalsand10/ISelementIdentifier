@@ -3,11 +3,12 @@
 $VERBOSE = true
 
 require '../ManipulateDBs/configuration.rb'
-# require '../ManipulateDBs/createDBs.rb'
+require '../ManipulateDBs/createDBs.rb'
 
 
 checkVars = Configuration.new('../config')
 checkVars.load()
+
 puts checkVars.folder_data
 
 #var = CreateDBs.new('lala', 'tralala')
