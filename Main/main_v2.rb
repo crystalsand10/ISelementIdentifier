@@ -16,7 +16,9 @@ createDbs.createNuclBlastDB(inputs.dataFile, inputs.dbFileName_ISseqs)
 createDbs.createNuclBlastDB(inputs.geneSeqsFile, inputs.dbFileName_geneSeqs)
 
 
-## Blast databases 
+## Creating and submitting blast scripts
+
+
 
 
 ## Process results

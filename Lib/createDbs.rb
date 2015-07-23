@@ -1,6 +1,6 @@
-# This class given an input fasta file name, and an output DB loc,
-# blast-db program location 
-# creates a blast database file
+# This class given an input (+fasta file name+), and an (+output DB loc+),
+# (+blast-db program location+) 
+# creates (++a blast database file++)
 class CreateDbs
 
 	@@NUCL = 'nucl'

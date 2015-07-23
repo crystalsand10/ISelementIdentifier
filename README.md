@@ -1,5 +1,6 @@
 # ISelementIdentifier
-Bioinformatics, identify IS (Insertion Sequence) elements in bacterial genomes
+Bioinformatics, identify IS (Insertion Sequence) elements in bacterial genomes, high throughput 
+
 
 ## Requirements 
 
@@ -26,14 +27,15 @@ usage:
 |-data| loc/datafile.fq |  location and name of sequence reads file (in fasta format)|
 |-geneSeqs| fileName | Location and name of the gene sequence file (fasta format) | 
 |-blastProgFolder| loc | location of the folder containing the various blast programs (in particular the programs used are makeblastdb)| 
-|-blastDBLoc| loc | folder where the blast databases will be created, if folder does not exist, it will be created.| 
-|-clusterTemplateFile| loc+fileName| location and name of a template HPC file (to which blasting commands will be appended). 
+|-clusterTemplateFile| loc+fileName| location and name of a template HPC file (to which blasting commands will be appended). |
 
 
 #### Optional arguments 
 |Argument| Argument-value| Explanation|
 | ---|---|---|
 |-h, --help||print this help and exit|
+|-blastDBLoc| loc | folder where the blast databases will be created, if folder does not exist, it will be created.| 
+|-clusterSubmission| command | By default "qsub" is assumed as the cluster submission comamnd. If different command is required, specify with this option. | 
 
 
 
@@ -64,6 +66,10 @@ usage:
 + inputs/printHelp()
 + Can extend optional arguments: 
   * name of isSeqs database 
++ can upload an example pbs file. 
+
+
+
 
 
 

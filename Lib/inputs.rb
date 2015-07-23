@@ -21,6 +21,8 @@ class Inputs
 	attr_reader :dbFileName_ISseqs # IS seqs database file 
 	attr_reader :dbFileName_geneSeqs # Gene seqs file 
 
+	attr_reader :clusterTemplateFile # loc. and name of a template file for parallelisation on HPC. 
+
 
 	# initalise with ARGV 
 	def initialize(argv)
@@ -42,16 +44,24 @@ class Inputs
 			when '-data' 
 				@dataFile = @argv[i+1]
 				checkDataFile(); 
+			
 			when '-blastProgFolder'
 				@blastProgLoc = @argv[i+1]
 				@blastProgLoc = checkDirSlash(@blastProgLoc)
 				checkMakeBlastDB();
+			
 			when '-blastDBLoc' 
 				@blastDBLoc = @argv[i+1]
 				checkBlastDBLoc(); 
+			
 			when '-geneSeqs'
 				@geneSeqsFile = @argv[i+1] 
 				checkGeneSeqsFile();  
+			
+			when '-clusterTemplateFile' 
+				@clusterTemplateFile = @argv[i+1]
+				checkClusterTemplateFile(); 
+
 			else 
 				unrecognisedOption(@argv[i]) 
 				printHelp()
@@ -96,6 +106,11 @@ class Inputs
 		end 
 		if not defined?(@geneSeqsFile)
 			puts "Error: you did not specify a file containing gene sequences"
+			printHelp() 
+			exit() 
+		end 
+		if not defined?(@clusterTemplateFile)
+			puts "Error: you did not specify the location and name of the template cluster script" 
 			printHelp() 
 			exit() 
 		end 
@@ -187,6 +202,15 @@ class Inputs
 			return dirName + '/' 
 		end 
 		return dirName
+	end 
+
+	## checks if the +clusterTemplateFile+ exists, if not, prints an error and exits; 
+	def checkClusterTemplateFile()
+		if (not File.exist?(@clusterTemplateFile))
+			puts "Error: cannot find template cluster file " + @clusterTemplateFile + "."
+			printHelp() 
+			exit
+		end 
 	end 
 
 
